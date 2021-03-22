@@ -1,5 +1,5 @@
 BEGIN;
-INSERT INTO JAVAEE_TODO.TODO (
+INSERT INTO TODO (
     title,
     objective,
     creation_date,
@@ -11,7 +11,7 @@ INSERT INTO JAVAEE_TODO.TODO (
     0
 );
 
-INSERT INTO JAVAEE_TODO.TODO (
+INSERT INTO TODO (
     title,
     objective,
     creation_date,
@@ -23,7 +23,7 @@ INSERT INTO JAVAEE_TODO.TODO (
     0
 );
 
-INSERT INTO JAVAEE_TODO.TODO (
+INSERT INTO TODO (
     title,
     objective,
     creation_date,
@@ -35,7 +35,7 @@ INSERT INTO JAVAEE_TODO.TODO (
     1
 );
 
-INSERT INTO JAVAEE_TODO.TODO (
+INSERT INTO TODO (
     title,
     objective,
     creation_date,
@@ -47,7 +47,7 @@ INSERT INTO JAVAEE_TODO.TODO (
     0
 );
 
-INSERT INTO JAVAEE_TODO.TODO (
+INSERT INTO TODO (
     title,
     objective,
     creation_date,
