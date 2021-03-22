@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>tariq.abdulghani</groupId>
-  <artifactId>hello</artifactId>
+  <artifactId>hello-jakarta-micro</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <properties>
@@ -11,7 +11,7 @@
     <failOnMissingWebXml>false</failOnMissingWebXml>
     <maven.compiler.source>1.8</maven.compiler.source>
     <payaraVersion>5.2020.2</payaraVersion>
-    <final.name>hello</final.name>
+    <final.name>hello-jakarta-micro</final.name>
   </properties>
   <dependencies>
     <dependency>
@@ -21,9 +21,23 @@
       <type>pom</type>
       <scope>provided</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>8.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.23</version>
+    </dependency>
   </dependencies>
   <build>
-    <finalName>hello</finalName>
+    <finalName>hello-jakarta-micro</finalName>
   </build>
   <profiles>
     <profile>
