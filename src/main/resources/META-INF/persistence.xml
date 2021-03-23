@@ -1,25 +1,13 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd" version="1.0">
     <persistence-unit name="PU" transaction-type="JTA">
         <jta-data-source>jdbc/ExampleDataSource</jta-data-source>
-<!--        <description>-->
-<!--            Persistence unit for the JPA using  Eclipse link-->
-<!--        </description>-->
-
-<!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
-<!--        <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/JAVAEE_TODO"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="root"/>
-
             <!-- DON'T USE THIS IN PRODUCTION -->
             <!-- automatically drop and create required database tables -->
-
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
             <!-- create script-->
-            <property name="javax.persistence.schema-generation.create-source"
-                      value="script"/>
+            <property name="javax.persistence.schema-generation.create-source" value="script"/>
             <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/sql/create-db.sql" />
             <!-- drop script-->
             <property name="javax.persistence.schema-generation.drop-script-source" value="META-INF/sql/drop-db.sql" />

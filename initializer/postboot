@@ -1,5 +1,5 @@
-create-jdbc-connection-pool --datasourceclassname com.mysql.cj.jdbc.MysqlDataSource --restype javax.sql.DataSource demo-pool
-set resources.jdbc-connection-pool.demo-pool.property.password=root resources.jdbc-connection-pool.demo-pool.property.databaseName=JAVAEE_TODO resources.jdbc-connection-pool.demo-pool.property.serverName=localhost resources.jdbc-connection-pool.demo-pool.property.user=root resources.jdbc-connection-pool.demo-pool.property.portNumber=3306
+create-jdbc-connection-pool --datasourceclassname com.mysql.cj.jdbc.MysqlXADataSource --restype javax.sql.DataSource demo-pool
+set resources.jdbc-connection-pool.demo-pool.property.password=root resources.jdbc-connection-pool.demo-pool.property.databaseName=JAVAEE_TODO resources.jdbc-connection-pool.demo-pool.property.serverName=localhost resources.jdbc-connection-pool.demo-pool.property.user=root resources.jdbc-connection-pool.demo-pool.property.portNumber=3306 resources.jdbc-connection-pool.demo-pool.property.useSSL=false
 
 create-jdbc-resource --enabled=true --poolName=demo-pool --target=domain jdbc/ExampleDataSource
 create-resource-ref --enabled=true --target=server jdbc/ExampleDataSource

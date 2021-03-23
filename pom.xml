@@ -40,31 +40,5 @@
     <finalName>hello-jakarta-micro</finalName>
   </build>
   <profiles>
-    <profile>
-      <id>payara-micro</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>fish.payara.maven.plugins</groupId>
-            <artifactId>payara-micro-maven-plugin</artifactId>
-            <version>1.0.5</version>
-            <executions>
-              <execution>
-                <phase>package</phase>
-                <goals>
-                  <goal>bundle</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <payaraVersion>${payaraVersion}</payaraVersion>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
   </profiles>
 </project>

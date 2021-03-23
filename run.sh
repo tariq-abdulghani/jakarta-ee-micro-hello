@@ -1,1 +1,1 @@
- java -jar /home/tariq/Documents/servers/payara-micro-5.2021.1.jar ./target/hello-jakarta-micro.war  --postbootcommandfile ./initializer/postboot --addlibs ./libs/mysql-connector-java-8.0.23.jar --port 9090
+ java -jar /home/tariq/Documents/servers/payara-micro-5.2021.1.jar ./target/hello-jakarta-micro.war  --postbootcommandfile ./initializer/postboot --addlibs ./libs --port 9090
