@@ -1,6 +1,9 @@
 package tariq.abdulghani.hello.todo;
 
 import javax.persistence.*;
+import javax.validation.constraints.FutureOrPresent;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -11,8 +14,13 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
+    @Size(min = 3, max = 20, message = "it must be at least 3 and max 20 chars.")
     String title;
+
+    @NotNull(message = "objective can't be empty.")
     String objective;
+
+    @FutureOrPresent(message = "creation date must be future or present.")
     Date creation_date;
     boolean completed;
 

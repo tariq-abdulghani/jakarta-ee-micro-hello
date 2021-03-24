@@ -7,7 +7,7 @@ import javax.ws.rs.core.Application;
 /**
  *
  */
-@ApplicationPath("/data")
+@ApplicationPath("/api/v1")
 @ApplicationScoped
 public class HelloRestApplication extends Application {
 }
