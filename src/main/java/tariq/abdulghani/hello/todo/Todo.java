@@ -11,7 +11,7 @@ import java.util.Date;
 public class Todo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
     @Size(min = 3, max = 20, message = "it must be at least 3 and max 20 chars.")
@@ -22,7 +22,11 @@ public class Todo {
 
     @FutureOrPresent(message = "creation date must be future or present.")
     Date creation_date;
+
     boolean completed;
+
+
+    Date completed_at;
 
     public Todo() {
     }
@@ -65,6 +69,14 @@ public class Todo {
 
     public void setCompleted(boolean completed) {
         this.completed = completed;
+    }
+
+    public Date getCompleted_at() {
+        return completed_at;
+    }
+
+    public void setCompleted_at(Date completed_at) {
+        this.completed_at = completed_at;
     }
 
     @PrePersist

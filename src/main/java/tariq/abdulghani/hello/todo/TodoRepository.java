@@ -1,6 +1,7 @@
 package tariq.abdulghani.hello.todo;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
@@ -9,10 +10,26 @@ import java.util.List;
 @Stateless
 public class TodoRepository {
 
-    @PersistenceContext(unitName = "PU")
-    EntityManager em;
+    @Inject
+    TodoDAO todoDAO;
 
     public List<Todo> getAll(){
-        return em.createQuery("select t from Todo t").getResultList();
+        return todoDAO.getAll();
+    }
+
+    public Todo getById(Long id){
+        return todoDAO.getById(id);
+    }
+
+    public Todo create(Todo todo){
+        return todoDAO.create(todo);
+    }
+
+    public Todo update(Todo todo){
+        return todoDAO.update(todo);
+    }
+
+    public Todo delete(Todo todo){
+        return todoDAO.delete(todo);
     }
 }
