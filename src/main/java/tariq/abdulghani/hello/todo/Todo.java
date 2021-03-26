@@ -20,7 +20,8 @@ public class Todo {
     @NotNull(message = "objective can't be empty.")
     String objective;
 
-    @FutureOrPresent(message = "creation date must be future or present.")
+//    @FutureOrPresent(message = "creation date must be future or present.")
+//    do validation when data is provided by the client not by us.
     Date creation_date;
 
     boolean completed;

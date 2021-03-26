@@ -1,6 +1,5 @@
 package tariq.abdulghani.hello.todo;
 
-import javax.batch.api.BatchProperty;
 import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
