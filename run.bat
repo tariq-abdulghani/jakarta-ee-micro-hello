@@ -1,1 +1,1 @@
- java -jar C:\Users\G524325\Documents\app-servers/payara-micro-5.2020.6.jar ./target/hello-jakarta-micro.war  --postbootcommandfile ./initializer/postboot --addlibs ./libs --port 7777
+ java -jar C:\Users\G524325\Documents\app-servers/payara-micro-5.2020.6.jar ./target/hello-jakarta-micro.war  --postbootcommandfile ./initializer/postboot-windows --addlibs ./libs --port 7777
