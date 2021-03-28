@@ -25,6 +25,17 @@ To launch the test page, open your browser at the following URL
 
 ### CDI
 * type safe DI, sterio types, qualifiers
+
+
+injection is achieved by type not concrete class so to inject a bean
+  use an interface tha it implements.
+  if multiple beans implement the same interface use
+  qualifiers in case of CDI beans 
+  or use in case of EJB
+  `@Local public interface YourInterface{...}`.
+  `@Statleass(name="name")`  specify bean name used to recognize it by container
+  `@EJB(beanName="name")` use the name to inject it
+  
 * life cycle - contexts
 * interceptors
 * events

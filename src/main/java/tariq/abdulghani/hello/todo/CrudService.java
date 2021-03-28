@@ -1,13 +1,15 @@
 package tariq.abdulghani.hello.todo;
 
+import javax.ejb.Local;
 import java.util.List;
 
-public interface CrudDAO<T>{
+@Local
+public interface CrudService<T>{
 
     List<T> getAll();
     T getById(Long id);
     T create(T entity);
     T update(T entity);
     T delete(T entity);
-    T deleteById(T entity);
+    T deleteById(Long id);
 }

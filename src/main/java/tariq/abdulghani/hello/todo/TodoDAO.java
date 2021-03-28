@@ -1,14 +1,20 @@
 package tariq.abdulghani.hello.todo;
 
-import com.sun.org.apache.bcel.internal.generic.ATHROW;
+import tariq.abdulghani.hello.qualifiers.TodoDAOType;
 
+import javax.ejb.Stateless;
+import javax.enterprise.context.Dependent;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 
-public class TodoDAO implements CrudDAO<Todo> {
+//@Dependent
+//@TodoDAOType
+//@Transactional
+@Stateless(name = "TodoDAO")
+public class TodoDAO implements CrudService<Todo> {
 
     @PersistenceContext(unitName = "PU")
     EntityManager em;
@@ -24,11 +30,7 @@ public class TodoDAO implements CrudDAO<Todo> {
                 .createQuery("select t from Todo t where t.id = :pId", Todo.class)
                 .setParameter("pId", id)
                 .getSingleResult();
-        if(foundTodo == null){
-            throw new EntityNotFoundException("there is no Todo with id" + id);
-        }else{
             return foundTodo;
-        }
     }
 
     @Override
@@ -41,18 +43,14 @@ public class TodoDAO implements CrudDAO<Todo> {
     public Todo update(Todo entity) {
 
         Todo foundTodo = getById(entity.getId());
-
-        if (foundTodo != null && entity.completed) {
+        if (entity.completed) {
             // not null and completed
             foundTodo.setCompleted(true);
             foundTodo.setCompleted_at(new Date());
-        } else if (foundTodo != null && !entity.completed) {
+        } else if (!entity.completed) {
             // not null not completed
             foundTodo.setCompleted(false);
             foundTodo.setCompleted_at(null);
-        } else {
-            // null with any
-            throw new EntityNotFoundException("there is no todo with title " + entity.getTitle());
         }
         em.merge(foundTodo);
         return foundTodo;
@@ -65,7 +63,9 @@ public class TodoDAO implements CrudDAO<Todo> {
     }
 
     @Override
-    public Todo deleteById(Todo entity) {
-        return null;
+    public Todo deleteById(Long id) {
+        Todo foundTodo  = getById(id);
+        em.remove(foundTodo);
+        return foundTodo;
     }
 }
