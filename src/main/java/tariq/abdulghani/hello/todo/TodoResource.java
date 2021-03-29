@@ -7,12 +7,16 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Path("todo")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class TodoResource {
 
+    @Inject
+    Logger logger;
 
     @EJB(beanName = "TodoRepository")
 //    @Inject
@@ -21,6 +25,9 @@ public class TodoResource {
 
     @GET
     public List<Todo> getALl(){
+        logger.log(Level.INFO, "###################################################");
+        logger.log(Level.INFO, "get all todos ....... injection works fine");
+        logger.log(Level.INFO, "###################################################");
         return todoRepository.getAll();
     }
 
